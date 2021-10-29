@@ -119,3 +119,9 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(len(self.room2.guestlist), 0)
         result = self.room2.check_out_all_guests_in_this_room()
         self.assertEqual(result, "this room is already empty")
+
+    def test_add_song_to_room(self):
+        self.assertEqual(len(self.room1.songlist), 5)
+        self.room1.add_song_to_room(self.song6)
+        self.assertEqual(len(self.room1.songlist), 6)
+        

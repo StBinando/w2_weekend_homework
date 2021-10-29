@@ -18,3 +18,6 @@ class Room:
         if len(self.guestlist) == 0:
             return "this room is already empty"
         self.guestlist.clear()
+
+    def add_song_to_room(self, song):
+        self.songlist.append(song)
