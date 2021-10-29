@@ -57,17 +57,17 @@ class TestRoom(unittest.TestCase):
         self.songlist1 = [self.song1, self.song2, self.song3, self.song4, self.song5]
         self.songlist2 = [self.song6, self.song7, self.song8]
 
-        self.guest1 = Guest(guests[0], 10)
-        self.guest2 = Guest(guests[1], 20)
-        self.guest3 = Guest(guests[2], 15)
-        self.guest4 = Guest(guests[3], 50)
-        self.guest5 = Guest(guests[4], 5)
-        self.guest6 = Guest(guests[5], 25)
-        self.guest7 = Guest(guests[6], 33)
-        self.guest8 = Guest(guests[7], 12)
-        self.guest9 = Guest(guests[8], 27)
-        self.guest10 = Guest(guests[9], 100)
-        self.guest11 = Guest(guests[10], 18)
+        self.guest1 = Guest(guests[0], 10, self.song1)
+        self.guest2 = Guest(guests[1], 20, self.song6)
+        self.guest3 = Guest(guests[2], 15, self.song8)
+        self.guest4 = Guest(guests[3], 50, self.song3)
+        self.guest5 = Guest(guests[4], 5, self.song2)
+        self.guest6 = Guest(guests[5], 25, self.song7)
+        self.guest7 = Guest(guests[6], 33, self.song4)
+        self.guest8 = Guest(guests[7], 12, self.song1)
+        self.guest9 = Guest(guests[8], 27, self.song5)
+        self.guest10 = Guest(guests[9], 100, self.song6)
+        self.guest11 = Guest(guests[10], 18, self.song2)
 
         self.guestlist1 = [self.guest1, self.guest2, self.guest3, self.guest4, self.guest5]
         self.guestlist2 = [self.guest6, self.guest7, self.guest8]
