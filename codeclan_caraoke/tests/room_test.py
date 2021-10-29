@@ -132,4 +132,13 @@ class TestRoom(unittest.TestCase):
         result = self.room1.add_song_to_room(self.song5)
         self.assertEqual(result, "song already in this room")
 
-        
+    def test_check_in_1_guest_room_is_full(self):
+        self.assertEqual(len(self.room2.guestlist), 0)
+        self.room2.guestlist = self.guestlist2
+        self.assertTrue(len(self.room2.guestlist) <= self.room2.capacity)
+        self.room2.check_in_1_guest(self.guest1)
+        # room2 has reached full capacity with 4 guests
+        self.room2.check_in_1_guest(self.guest2)
+        result = self.room2.check_in_1_guest(self.guest2)
+        self.assertEqual(result, "sorry, this room is full")
+        self.assertTrue(len(self.room2.guestlist) <= self.room2.capacity)

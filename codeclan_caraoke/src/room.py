@@ -6,6 +6,8 @@ class Room:
         self.capacity = capacity
 
     def check_in_1_guest(self, guest):
+        if len(self.guestlist) == self.capacity:
+            return "sorry, this room is full"
         self.guestlist.append(guest)
 
     def check_out_1_guest(self, guest):
