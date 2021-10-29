@@ -1,8 +1,9 @@
 class Room:
-    def __init__(self, name, guestlist, songlist):
+    def __init__(self, name, guestlist, songlist, capacity):
         self.name = name
         self.guestlist = guestlist
         self.songlist = songlist
+        self.capacity = capacity
 
     def check_in_1_guest(self, guest):
         self.guestlist.append(guest)
