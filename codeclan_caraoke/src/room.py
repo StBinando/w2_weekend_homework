@@ -20,4 +20,7 @@ class Room:
         self.guestlist.clear()
 
     def add_song_to_room(self, song):
+        if song in self.songlist:
+            return "song already in this room"
         self.songlist.append(song)
+

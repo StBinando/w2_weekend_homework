@@ -124,4 +124,12 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(len(self.room1.songlist), 5)
         self.room1.add_song_to_room(self.song6)
         self.assertEqual(len(self.room1.songlist), 6)
+
+    def test_add_song_already_in_room(self):
+        self.assertEqual(len(self.room1.songlist), 5)
+        self.room1.add_song_to_room(self.song5)
+        self.assertEqual(len(self.room1.songlist), 5)
+        result = self.room1.add_song_to_room(self.song5)
+        self.assertEqual(result, "song already in this room")
+
         
