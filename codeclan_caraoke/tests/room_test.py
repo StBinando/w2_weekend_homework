@@ -143,3 +143,11 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(result, "sorry, this room is full")
         self.assertTrue(len(self.room2.guestlist) <= self.room2.capacity)
 
+    def test_guests_find_fav_song_in_room(self):
+        cheerings = []
+        for guest in self.room1.guestlist:
+            result = guest.cheer(self.room1.songlist)
+            print(result)
+            if result != None:
+                cheerings.append(result)
+        self.assertEqual(len(cheerings), 3)

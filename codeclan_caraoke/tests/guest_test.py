@@ -54,6 +54,9 @@ class TestGuest(unittest.TestCase):
         self.song7 = Song(songs[6]["title"], songs[6]["by"])
         self.song8 = Song(songs[7]["title"], songs[7]["by"])
         
+        self.songlist1 = [self.song1, self.song2, self.song3, self.song4, self.song5]
+        self.songlist2 = [self.song6, self.song7, self.song8]
+
         self.guest1 = Guest(guests[0], 10, self.song1)
         self.guest2 = Guest(guests[1], 20, self.song6)
         self.guest3 = Guest(guests[2], 15, self.song8)
@@ -70,7 +73,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(self.guest1.name, guests[0])
 
     def test_cheer_yes(self):
-        self.assertEqual(self.guest1.cheer(self.song1), "Whohoo!!!")
+        self.assertEqual(self.guest1.cheer(self.songlist1), "Whohoo!!!")
 
     def test_cheer_no(self):
-        self.assertIsNone(self.guest1.cheer(self.song2))
+        self.assertIsNone(self.guest1.cheer(self.songlist2))
