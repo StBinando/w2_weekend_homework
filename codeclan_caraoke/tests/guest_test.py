@@ -68,3 +68,9 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_name(self):
         self.assertEqual(self.guest1.name, guests[0])
+
+    def test_cheer_yes(self):
+        self.assertEqual(self.guest1.cheer(self.song1), "Whohoo!!!")
+
+    def test_cheer_no(self):
+        self.assertIsNone(self.guest1.cheer(self.song2))

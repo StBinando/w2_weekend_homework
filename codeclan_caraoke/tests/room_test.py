@@ -142,3 +142,4 @@ class TestRoom(unittest.TestCase):
         result = self.room2.check_in_1_guest(self.guest2)
         self.assertEqual(result, "sorry, this room is full")
         self.assertTrue(len(self.room2.guestlist) <= self.room2.capacity)
+
