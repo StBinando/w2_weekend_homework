@@ -5,17 +5,19 @@ class Room:
         self.songlist = songlist
         self.capacity = capacity
 
+    
     def check_in_1_guest(self, guest):
         if len(self.guestlist) == self.capacity:
             return "sorry, this room is full"
         self.guestlist.append(guest)
 
-    def check_out_1_guest(self, guest):
-        if len(self.guestlist) == 0:
-            return "this room is empty"
-        elif not(guest in self.guestlist):
-            return "guest not in this room"
-        self.guestlist.remove(guest)
+    # The following method removes a specific value, if present, from the list "guestlist"
+    def check_out_1_guest(self, guest): 
+        if len(self.guestlist) == 0: # checks that the list is not empty
+            return "this room is empty" # if it is empty returns a message
+        elif not(guest in self.guestlist): # checks that a specific value is in the list
+            return "guest not in this room" # it the value is not present returns a message
+        self.guestlist.remove(guest) # with both conditions satisfied, the guest gets removed from the list
 
     def check_out_all_guests_in_this_room(self):
         if len(self.guestlist) == 0:

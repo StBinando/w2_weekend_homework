@@ -147,7 +147,6 @@ class TestRoom(unittest.TestCase):
         cheerings = []
         for guest in self.room1.guestlist:
             result = guest.cheer(self.room1.songlist)
-            print(result)
             if result != None:
                 cheerings.append(result)
         self.assertEqual(len(cheerings), 3)
